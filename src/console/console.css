@@ -1,39 +1,27 @@
 .console {
-  height: 100vh;
-  width: 100vw;
+  position: fixed;
+  height: 100%;
+  width: 100%;
   background-color: rgba(10, 10, 10, 0.9);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .arrowUp{
-  display: inline-flex;
-  position: fixed;
-  top: 22vh;
-  left: 13vh;
+  height: 100%;
+  -webkit-transform:rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 
 .arrowDown{
-  display: flex;
-  position: fixed;
-  top: 22vh;
-  right: 13vh;
-}
-
-.arrow-down {
-  width: 40%;
-  height: 40%;
-  -webkit-transform:rotate(90deg);
-  -moz-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  -o-transform: rotate(90deg);
-  transform: rotate(90deg);
-}
-
-.arrow-up {
-  width: 40%;
-  height: 40%;
-  -webkit-transform:rotate(90deg);
-  -moz-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  -o-transform: rotate(90deg);
-  transform: rotate(90deg);
+  height: 100%;
+  -webkit-transform:rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg);
 }

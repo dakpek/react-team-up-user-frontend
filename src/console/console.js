@@ -3,6 +3,8 @@ import './console.css'
 import blue from '../assets/blueArrow.png'
 import red from '../assets/redArrow.png'
 import socket from '../socket';
+import Sounds from '../audio/sounds'
+const Pizzicato = require('pizzicato');
 
 class Console extends Component {
   constructor(props) {
@@ -21,7 +23,7 @@ class Console extends Component {
   }
 
   pressUp = () => {
-    this.makeSound1();
+    this.makeSoundUp();
     socket.emit('pressUp', {
       ...this.state.userData,
       inputType:'up',
@@ -30,7 +32,7 @@ class Console extends Component {
   }
 
   pressDown = () => {
-    this.makeSound2();
+    this.makeSoundDown();
     socket.emit('pressDown', {
       ...this.state.userData,
       inputType:'down'
@@ -50,36 +52,23 @@ class Console extends Component {
       : null
   }
 
-  makeSound1 = () => {
-    // console.log();
-    // if (!AudioContext) return
-    // const context = new AudioContext()
-    // const o = context.createOscillator()
-    // const g = context.createGain()
-    // o.connect(g)
-    // g.connect(context.destination)
-    // const X = 1
-    // const frequency = 87.31
-    // o.frequency.value = frequency;
-    // o.type = 'triangle';
-    // g.gain.exponentialRampToValueAtTime(0.00001, context.currentTime + X)
-    // o.start(0)
-    // o.stop(1)
+  makeSoundUp = () => {
+    // const rand = Math.random()
+    // if (rand <= 0.3) Sounds.sound1()
+    // else if (rand <= 0.6) Sounds.sound2()
+    // else if (rand <= 1) Sounds.sound3()
+    if (this.state.userData.team === 'blue') Sounds.sound1()
+    else Sounds.sound2()
+
   }
-  makeSound2 = () => {
-    // if (!AudioContext) return
-    // const context = new AudioContext()
-    // const o = context.createOscillator()
-    // const g = context.createGain()
-    // o.connect(g)
-    // g.connect(context.destination)
-    // const X = 1
-    // const frequency = 103.83
-    // o.frequency.value = frequency;
-    // o.type = 'triangle';
-    // g.gain.exponentialRampToValueAtTime(0.00001, context.currentTime + X)
-    // o.start(0)
-    // o.stop(1)
+
+  makeSoundDown = () => {
+    // const rand = Math.random()
+    // if (rand <= 0.3) Sounds.sound4()
+    // else if (rand <= 0.6) Sounds.sound5()
+    // else if (rand <= 1) Sounds.sound6()
+    if (this.state.userData.team === 'blue') Sounds.sound8()
+    else Sounds.sound9()
   }
 
   getGIF = async () => {

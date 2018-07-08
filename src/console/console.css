@@ -6,6 +6,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  user-select: none;
 }
 
 .winner_GIF {

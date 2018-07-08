@@ -73,12 +73,6 @@ class Console extends Component {
     })
   }
 
-  playAgain = () => {
-    socket.emit('userPlayAgain', {
-      ...this.state.userData
-    })
-  }
-
   renderArrows = () => {
     return this.state.userData
       ? this.state.userData.team === 'blue'
@@ -99,12 +93,12 @@ class Console extends Component {
   render() {
     return (
       <div className='console'>
-        <meta name="viewport" content="width=device-width, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
+        {/* <meta name="viewport" content="width=device-width, maximum-scale=1, minimum-scale=1, user-scalable=no"/> */}
           {this.state.winner
           ? <div className={this.state.winner === 'red' ? 'winner_announcer-red' : 'winner_announcer-blue'}>
             <h1 className="winner_announcer-h1">{`${this.state.winner.slice(0,1).toUpperCase()}${this.state.winner.slice(1)} team won!`}</h1>
             <p className="winner_announcer-p">Game restarting in 5 seconds<span>.</span><span>.</span><span>.</span></p>
-            <img class="winner_GIF" src={this.state.gifArray[Math.floor(Math.random() * this.state.gifArray.length)]} alt="winner!" />
+            <img className="winner_GIF" src={this.state.gifArray[Math.floor(Math.random() * this.state.gifArray.length)]} alt="winner!" />
           </div>
         : null}
           <img onClick={() => this.pressUp()} className='arrowUp' src={this.renderArrows()} />

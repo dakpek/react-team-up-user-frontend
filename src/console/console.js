@@ -57,8 +57,8 @@ class Console extends Component {
     // if (rand <= 0.3) Sounds.sound1()
     // else if (rand <= 0.6) Sounds.sound2()
     // else if (rand <= 1) Sounds.sound3()
-    if (this.state.userData.team === 'blue') Sounds.sound1()
-    else Sounds.sound2()
+    if (this.state.userData.team === 'blue') Sounds.sound8()
+    else Sounds.sound9()
 
   }
 

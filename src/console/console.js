@@ -51,9 +51,7 @@ class Console extends Component {
     gif_arr.push(snake)
     gif_arr.push(winner)
     gif_arr.push(simple)
-    console.log(gif_arr);
     this.state.gifArray = gif_arr;
-    console.log(this.state.gifArray);
   }
 
   pressUp = () => {

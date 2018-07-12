@@ -1,5 +1,6 @@
 import openSocket from 'socket.io-client'
-const socket = openSocket('192.168.1.187:2000')
+
+const socket = openSocket('https://mobpong-backend.herokuapp.com/')
 socket.on('connection', ()=> console.log('connected'))
 
 export default socket;
